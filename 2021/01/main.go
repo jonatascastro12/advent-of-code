@@ -9,7 +9,7 @@ import (
 )
 
 func puzzle1() {
-	file, err := os.Open("./input.txt")
+	file, err := os.Open("./2021/01/input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -66,7 +66,7 @@ func sumWindow(array [3]int) int {
 }
 
 func puzzle2() {
-	file, err := os.Open("./input.txt")
+	file, err := os.Open("./2021/01/input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -92,9 +92,6 @@ func puzzle2() {
 		// 3 A
 		if i >= 2 {
 			currentSum := sumWindow(window)
-
-			fmt.Println(window, currentSum)
-
 			// start counting after the 4th item
 			// 1 A
 			// 2 A B
@@ -127,6 +124,6 @@ func puzzle2() {
 }
 
 func main() {
-	// puzzle1()
+	puzzle1()
 	puzzle2()
 }
