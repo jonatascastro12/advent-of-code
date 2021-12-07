@@ -8,7 +8,6 @@ import (
 	"strings"
 )
 
-// brute force way
 func first() {
 	input := base.GetLines()
 
@@ -45,7 +44,6 @@ func first() {
 	fmt.Println(minFuel)
 }
 
-// smarter way
 func second() {
 	input := base.GetLines()
 
