@@ -1,4 +1,4 @@
-package Day_01
+package day01
 
 import java.io.File
 import java.nio.file.Paths
