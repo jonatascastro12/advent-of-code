@@ -1,12 +1,12 @@
 package day01
 
+import shared.readLines
 import java.io.File
 import java.nio.file.Paths
 
 fun main() {
-    val path = Paths.get("").toAbsolutePath().toString()
-    val fileName = "$path/src/main/kotlin/Day_01/input.txt"
-    val lines = File(fileName).readLines()
+    val lines = readLines("day01/input.txt")
+
     val elfCalories = mutableListOf<Int>()
 
     var lastElf = 0

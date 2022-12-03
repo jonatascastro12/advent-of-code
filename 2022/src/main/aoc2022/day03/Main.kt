@@ -1,14 +1,7 @@
 package day03
 
-import java.io.File
-import java.nio.file.Paths
-import kotlin.text.Regex
+import shared.readLines
 
-fun readLines(dayPath: String): List<String> {
-    val path = Paths.get("").toAbsolutePath().toString()
-    val fileName = "$path/src/main/kotlin/$dayPath"
-    return File(fileName).readLines()
-}
 
 fun main() {
     val lines = readLines("day03/input.txt")
@@ -18,34 +11,28 @@ fun main() {
 }
 
 fun convertCharToCode(char: Char): Int {
-    val azRegex = Regex("[a-z]")
-    val AZRegex = Regex("[A-Z]")
-
-    if (azRegex.matches(char.toString()))
+    if (Regex("[a-z]").matches(char.toString()))
         return char.code - 96
 
-
-    if (AZRegex.matches(char.toString()))
+    if (Regex("[A-Z]").matches(char.toString()))
         return char.code - 38
 
     return 0
 }
 
 fun runSolutionPartOne(lines: List<String>): Int {
-    var priorities = mutableListOf<Int>()
+    val priorities = mutableListOf<Int>()
 
     lines.forEach { line ->
-        var currentIntersection = mutableSetOf<Int>()
-
         val partOne = line.substring(0, line.length / 2)
         val partTwo = line.substring(line.length / 2, line.length)
 
-        partTwo.forEach {
+        for (it in partTwo) {
             if (it in partOne) {
-                currentIntersection.add(convertCharToCode(it))
+                priorities.add(convertCharToCode(it))
+                break
             }
         }
-        priorities.add(currentIntersection.sum())
     }
 
     return priorities.sum()

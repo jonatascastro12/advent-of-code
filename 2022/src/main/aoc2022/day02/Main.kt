@@ -1,12 +1,9 @@
 package day02
 
-import java.io.File
-import java.nio.file.Paths
+import shared.readLines
 
 fun main() {
-    val path = Paths.get("").toAbsolutePath().toString()
-    val fileName = "$path/src/main/kotlin/Day_02/input.txt"
-    val lines = File(fileName).readLines()
+    val lines = readLines("day02/input.txt")
 
     /**
      * A -> Rock
