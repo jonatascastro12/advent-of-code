@@ -1,27 +1,27 @@
 package day01
 
-import shared.readLines
-import java.io.File
-import java.nio.file.Paths
+import shared.AotUtil
 
-fun main() {
-    val lines = readLines("day01/input.txt")
+class Main {
+    fun main() {
+        val lines = AotUtil(this.javaClass.packageName).readLinesProduction()
 
-    val elfCalories = mutableListOf<Int>()
+        val elfCalories = mutableListOf<Int>()
 
-    var lastElf = 0
-    lines.forEach {
-        if (it != "") lastElf += it.toInt()
-        else {
-            elfCalories.add(lastElf)
-            lastElf = 0
+        var lastElf = 0
+        lines.forEach {
+            if (it != "") lastElf += it.toInt()
+            else {
+                elfCalories.add(lastElf)
+                lastElf = 0
+            }
         }
+        println("First Part: " + elfCalories.sortedDescending()[0])
+        println(
+            "Second Part: " + (
+                    elfCalories.sortedDescending()[0] +
+                            elfCalories.sortedDescending()[1] +
+                            elfCalories.sortedDescending()[2])
+        )
     }
-    println("First Part: " + elfCalories.sortedDescending()[0])
-    println(
-        "Second Part: " + (
-                elfCalories.sortedDescending()[0] +
-                        elfCalories.sortedDescending()[1] +
-                        elfCalories.sortedDescending()[2])
-    )
 }

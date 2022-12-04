@@ -3,34 +3,34 @@ package day03
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import shared.readLines
+import shared.AotUtil
 
-class MainKtTest {
+class MainKtTestDay03 {
     lateinit var lines: List<String>
 
     @BeforeEach
     fun setUp() {
-        this.lines = readLines("day03/input_test.txt")
+        this.lines = AotUtil(this.javaClass.packageName).readLinesTest()
     }
 
     @Test
     fun runSolutionPartOne() {
-        assertEquals(runSolutionPartOne(this.lines), 157)
+        assertEquals(Main().runSolutionPartOne(this.lines), 157)
     }
 
     @Test
     fun runSolutionPartTwo() {
-        assertEquals(runSolutionPartTwo(this.lines), 70)
+        assertEquals(Main().runSolutionPartTwo(this.lines), 70)
     }
 
     @Test
     fun convertCharToCode() {
-        assertEquals(convertCharToCode('a'), 1)
-        assertEquals(convertCharToCode('b'), 2)
-        assertEquals(convertCharToCode('p'), 16)
-        assertEquals(convertCharToCode('z'), 26)
-        assertEquals(convertCharToCode('A'), 27)
-        assertEquals(convertCharToCode('B'), 28)
-        assertEquals(convertCharToCode('Z'), 52)
+        assertEquals(Main().convertCharToCode('a'), 1)
+        assertEquals(Main().convertCharToCode('b'), 2)
+        assertEquals(Main().convertCharToCode('p'), 16)
+        assertEquals(Main().convertCharToCode('z'), 26)
+        assertEquals(Main().convertCharToCode('A'), 27)
+        assertEquals(Main().convertCharToCode('B'), 28)
+        assertEquals(Main().convertCharToCode('Z'), 52)
     }
 }
