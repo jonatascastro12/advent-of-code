@@ -15,11 +15,11 @@ class MainKtTestDay05 {
 
     @Test
     fun runSolutionPartOne() {
-        assertEquals(Main().runSolutionPartOne(this.lines), 0)
+        assertEquals(Main().runSolutionPartOne(this.lines), "CMZ")
     }
 
     @Test
     fun runSolutionPartTwo() {
-        assertEquals(Main().runSolutionPartTwo(this.lines), 0)
+        assertEquals(Main().runSolutionPartTwo(this.lines), "MCD")
     }
 }
